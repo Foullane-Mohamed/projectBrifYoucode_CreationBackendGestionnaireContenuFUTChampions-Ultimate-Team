@@ -1,3 +1,49 @@
+CREATE DATABASE football_players;
+
+USE football_players;
+
+
+CREATE TABLE players (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    photo_path VARCHAR(255),
+    nationality VARCHAR(255) NOT NULL,
+    flag_path VARCHAR(255),
+    club VARCHAR(255) NOT NULL,
+    logo_path VARCHAR(255),
+    position ENUM('GK', 'CM', 'CB', 'LB', 'RB', 'LW', 'CDM', 'ST', 'RW') NOT NULL,
+    plan ENUM('premier', 'deuxieme') NOT NULL,
+    rating TINYINT UNSIGNED NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE goalkeeper_attributes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT NOT NULL,
+    diving TINYINT UNSIGNED,
+    handling TINYINT UNSIGNED,
+    kicking TINYINT UNSIGNED,
+    reflexes TINYINT UNSIGNED,
+    speed TINYINT UNSIGNED,
+    positioning TINYINT UNSIGNED,
+    FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE outfield_attributes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT NOT NULL,
+    shooting TINYINT UNSIGNED,
+    pace TINYINT UNSIGNED,
+    dribbling TINYINT UNSIGNED,
+    defending TINYINT UNSIGNED,
+    physical TINYINT UNSIGNED,
+    passing TINYINT UNSIGNED,
+    FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE CASCADE
+);
+
+
 -- Active: 1734305693723@@127.0.0.1@3306@team_foot
 CREATE DATABASE team_foot;
 
@@ -40,7 +86,7 @@ CREATE TABLE goal_keepers (
 
 
 INSERT INTO players VALUES (
-    "ahmed",
+    "med",
     "https://cdn.sofifa.net/players/212/622/25_120.png",
     "ST",
     "Germany",

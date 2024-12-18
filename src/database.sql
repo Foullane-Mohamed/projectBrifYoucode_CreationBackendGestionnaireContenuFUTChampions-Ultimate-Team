@@ -12,7 +12,6 @@ CREATE TABLE players (
     club VARCHAR(255) NOT NULL,
     logo_path VARCHAR(255),
     position ENUM('GK', 'CM', 'CB', 'LB', 'RB', 'LW', 'CDM', 'ST', 'RW') NOT NULL,
-    plan ENUM('premier', 'deuxieme') NOT NULL,
     rating TINYINT UNSIGNED NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

@@ -8,6 +8,9 @@ let btnEnter = document.querySelector(".btn-enter");
 let card = document.querySelector(".card");
 let showInfoPlayer = document.querySelector(".show-info-player");
 let hideInfoPlayer = document.querySelector(".hide-info-player");
+console.log('hello');
+
+
 selectPosition.addEventListener("change", () => {
 if (selectPosition.value === "GK") {
 inputsDivplayerGk.style.display = "block";

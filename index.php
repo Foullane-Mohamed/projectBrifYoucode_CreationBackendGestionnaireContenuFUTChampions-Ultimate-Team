@@ -192,10 +192,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       <a href="#?id=<?= $player['player_id'] ?>"> <i class="fa-regular fa-eye"></i></a>
 
                     </button>
-                    <button
-                      class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
+                <a href="./players/update.php">
+                <button
+                      class="edit_player bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
                       <i class="fas fa-pen font-xxl text-xl"></i>
                     </button>
+                </a>
                     <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
                       <a href="./players/delete.php?id=<?= $player['player_id'] ?>">
                         <i class="fas fa-trash"></i>

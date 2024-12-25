@@ -186,24 +186,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <td class="p-2 text-center"><?= htmlspecialchars($player['player_rating']) ?></td>
                   <td class="p-2 text-center"><?= htmlspecialchars($player['player_club']) ?></td>
                   <td class="p-2 flex justify-center gap-2">
-                    <button
-                      class="show-info-player bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
-
-                      <a href="#?id=<?= $player['player_id'] ?>"> <i class="fa-regular fa-eye"></i></a>
-
-                    </button>
-                <a href="./players/update.php">
-                <button
-                      class="edit_player bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
-                      <i class="fas fa-pen font-xxl text-xl"></i>
-                    </button>
-                </a>
-                    <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
-                      <a href="./players/delete.php?id=<?= $player['player_id'] ?>">
-                        <i class="fas fa-trash"></i>
+                      <button class="show-info-player bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
+                          <a href="#?id=<?= $player['player_id'] ?>"> 
+                              <i class="fa-regular fa-eye"></i>
+                          </a>
+                      </button>
+                      <a href="./players/update.php?id=<?= $player['player_id'] ?>">
+                          <button class="edit_player bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
+                              <i class="fas fa-pen font-xxl text-xl"></i>
+                          </button>
                       </a>
-                    </button>
-                
+                      <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                          <a href="./players/delete.php?id=<?= $player['player_id'] ?>">
+                              <i class="fas fa-trash"></i>
+                          </a>
+                      </button>
                   </td>
                 </tr>
               <?php endforeach; ?>
